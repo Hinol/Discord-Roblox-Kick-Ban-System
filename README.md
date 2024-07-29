@@ -18,9 +18,12 @@ W code editorze załaduj pliki (index.js, secrets, package.json) otwórz termina
 Wrzuć LiveConnect.luau do Robloxa i odpowiednio go ustaw
 
 
-
+WAŻNE/IMPORTANT
 Pamiętaj by nie udostępniać kluczy API  
 Don't share API keys
+
+System działa tylko w cliencie robloxa nie w roblox studio
+System works only in Roblox Client not in Roblox Studio
 
 
 
