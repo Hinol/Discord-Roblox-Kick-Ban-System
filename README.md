@@ -5,7 +5,7 @@ In the code editor, load the files (index.js, secrets, package.json), open the t
 
 Remember to enter the same key in the game on Roblox
 
-
+Place LiveConnect.luau in roblox
 
 
 
@@ -15,7 +15,7 @@ API słuzy do łączenia Discorda z Robloxem przy pomocy MessagingService API i 
 
 W code editorze załaduj pliki (index.js, secrets, package.json) otwórz terminal i wpisz npm install w folderze secrets musisz ustawić odpowiednie wartości kluczy API klucz do MessagingService i DataStore znajdziesz na stronie robloxa https://create.roblox.com/ w zakładce API Keys dla bezpieczeństa API zrobiłem prosta funkcje sprawdzajacą klucz więc musisz go ustawić w pliku api_key.json (wpisujesz losowy ciąg liczb) pamiętaj by użyć ten sam klucz w grze na roblox.
 
-
+Wrzuć LiveConnect.luau do Robloxa i odpowiednio go ustaw
 
 
 
