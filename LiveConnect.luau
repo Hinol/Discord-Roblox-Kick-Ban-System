@@ -4,9 +4,7 @@ local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 
 
-local function Debug(message)
-	print("[DEBUG] " .. message)
-end
+
 
 local function ParseISO8601Date(DateString)
 	local Pattern = "(%d+)%-(%d+)%-(%d+)T(%d+):(%d+):(%d+)Z"
@@ -44,7 +42,7 @@ local function CheckBan(Player)
 	end)
 
 	if not success then
-		Debug("Error in HttpService:GetAsync: " .. tostring(response))
+		print("Error in HttpService:GetAsync: " .. tostring(response))
 		return
 	end
 
@@ -52,25 +50,25 @@ local function CheckBan(Player)
 		local data = HttpService:JSONDecode(response)
 		if data and data.value then
 			local BanInfo = HttpService:JSONDecode(data.value)
-			Debug("Ban info found for player: " .. Player.Name)
-			Debug(HttpService:JSONEncode(BanInfo))
+			print("Ban info found for player: " .. Player.Name)
+			print(HttpService:JSONEncode(BanInfo))
 
 			local CurrentDate = os.time()
 			local EndDateTimestamp = ParseISO8601Date(BanInfo.date)
 
-			Debug("Current Date: " .. tostring(CurrentDate))
-			Debug("End Date Timestamp: " .. tostring(EndDateTimestamp))
+			print("Current Date: " .. tostring(CurrentDate))
+			print("End Date Timestamp: " .. tostring(EndDateTimestamp))
 
 			if CurrentDate < EndDateTimestamp then
 				Player:Kick("Zostałeś tymczasowo zbanowany za: " .. BanInfo.reason .. " przez: " .. BanInfo.admin .. ". Ban wygasa: " .. FormatDateToISO8601(EndDateTimestamp))
 			else
-				Debug("Ban expired for player: " .. Player.Name)
+				print("Ban expired for player: " .. Player.Name)
 			end
 		else
-			Debug("No ban info found for player: " .. Player.Name)
+			print("No ban info found for player: " .. Player.Name)
 		end
 	else
-		Debug("Failed to retrieve ban info for player: " .. Player.Name .. " - Response: " .. tostring(response))
+		print("Failed to retrieve ban info for player: " .. Player.Name .. " - Response: " .. tostring(response))
 	end
 end
 
