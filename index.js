@@ -5,8 +5,8 @@ const axios = require('axios');
 const bodyparser = require('body-parser');
 const app = express();
 const api_key = require('./secrets/api_key.json').api_key; // Your API key for this API NOT FOR ROBLOX API
-const universe_id = "6330068421" // Set universe id of your game
-const db_name = "BansData" // Set the name of DataStore using in your game 
+const universe_id = "" // Set universe id of your game
+const db_name = "" // Set the name of DataStore using in your game 
 
 app.use(bodyparser.json());
 
